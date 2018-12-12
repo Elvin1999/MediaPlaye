@@ -56,7 +56,7 @@ namespace ConsoleApp9
     }
     class Frame
     {
-        int GetSecond()
+        int GetSecond(int framesecond)
         {
             return 1;
         }
