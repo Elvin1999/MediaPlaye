@@ -20,7 +20,7 @@ namespace ConsoleApp9
             FilePath = filePath;
         }
         public string Duration { get; set; }
-        public string Format { get; set; }
+        public string Format   { get; set; }
         public string FilePath { get; set; }
         public string GetDuration()
         {
@@ -127,6 +127,7 @@ namespace ConsoleApp9
             video.AddFrame(frame3); video.AddFrame(frame4);
             //Console.WriteLine(video.GetFrame(3));
             video.ShowVideo();
+            Console.ResetColor();
         }
     }
     class Program
