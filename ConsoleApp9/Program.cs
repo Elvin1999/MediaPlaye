@@ -74,14 +74,23 @@ namespace ConsoleApp9
         {
             return frames.Count;
         }
+        Random _random = new Random();
+        public ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(0,consoleColors.Length));
+        }
         public void ShowVideo()
         {
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("===================================================================");
             Console.WriteLine($"Duration {Duration} Format {Format} FilePath {FilePath} Stereo {IStereo()}  Mono {IsMono()}");
             Console.WriteLine("===================================================================");
+
             foreach (var item in frames)
             {
+                Console.ForegroundColor = GetRandomConsoleColor();
                 System.Threading.Thread.Sleep(1000);
                 Console.WriteLine("=========");
                 Console.WriteLine("=========");
@@ -122,6 +131,7 @@ namespace ConsoleApp9
     }
     class Program
     {
+        
         static void Main(string[] args)
         {
             Controller controller = new Controller();
